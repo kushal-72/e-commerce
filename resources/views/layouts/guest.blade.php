@@ -11,20 +11,47 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+         <!-- Favicon -->
+      <link rel="shortcut icon" href="../assets/images/favicon.ico" />
+      <link rel="stylesheet" href="../assets/css/backend-plugin.min.css">
+      <link rel="stylesheet" href="../assets/css/backend.css?v=1.0.1">
+      <link rel="stylesheet" href="../assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+      <link rel="stylesheet" href="../assets/vendor/remixicon/fonts/remixicon.css">
+      
+      <link rel="stylesheet" href="../assets/vendor/tui-calendar/tui-calendar/dist/tui-calendar.css">
+      <link rel="stylesheet" href="../assets/vendor/tui-calendar/tui-date-picker/dist/tui-date-picker.css">
+      <link rel="stylesheet" href="../assets/vendor/tui-calendar/tui-time-picker/dist/tui-time-picker.css"></head>
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
-
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
-            </div>
+   <body class=" ">
+  <!-- loader Start -->
+  <div id="loading">
+        <div id="loading-center">
         </div>
-    </body>
+  </div>
+  <!-- loader END -->
+
+  <div class="wrapper">
+        {{$slot}}
+    </div>
+
+  <!-- Backend Bundle JavaScript -->
+  <script src="../assets/js/backend-bundle.min.js"></script>
+  
+  <!-- Table Treeview JavaScript -->
+  <script src="../assets/js/table-treeview.js"></script>
+  
+  <!-- Chart Custom JavaScript -->
+  <script src="../assets/js/customizer.js"></script>
+  
+  <!-- Chart Custom JavaScript -->
+  <script async src="../assets/js/chart-custom.js"></script>
+  <script src="../assets/js/charts/01.js?v=1.0.1"></script>
+  <script src="../assets/js/charts/02.js?v=1.0.1"></script>
+  <!-- Chart Custom JavaScript -->
+  <script async src="../assets/js/slider.js"></script>
+  
+  <!-- app JavaScript -->
+  <script src="../assets/js/app.js?v=1.0.1"></script>
+</body>
+
 </html>

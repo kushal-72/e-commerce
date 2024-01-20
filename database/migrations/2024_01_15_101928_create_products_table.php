@@ -13,18 +13,19 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('product_category_id')->constrained()->onDelete('cascade');
             $table->string('name')->nullable();
             $table->text('description')->nullable();
             $table->decimal('price', 10, 2)->nullable();
             $table->integer('stock_quantity')->nullable();
-            $table->string('product_color')->nullable();
-            $table->string('material_type')->nullable();
-            $table->string('size')->nullable();
-            $table->string('pattern')->nullable();
+            $table->foreignId('product_color_id')->constrained()->onDelete('cascade');
+            $table->foreignId('product_material_type_id')->constrained()->onDelete('cascade'); //cotton,silk etc
+            $table->string('size')->nullable(); // xs, s, m, l, xl, xxl, xxxl, 
+            $table->string('pattern')->nullable(); //solid and printed
             $table->text('additional_info')->nullable();
+            $table->text('created_by')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
